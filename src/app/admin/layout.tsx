@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./../globals.css";
+import SideNav from "@/components/navigation/SideNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,5 +15,13 @@ export default function AuthLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div>Layout chung</div>;
+  return (
+    <div className="flex">
+      <div className="basis-1/5">
+        {" "}
+        <SideNav />
+      </div>
+      <div className="basis-4/5"> {children}</div>
+    </div>
+  );
 }
