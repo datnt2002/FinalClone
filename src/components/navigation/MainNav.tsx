@@ -1,21 +1,36 @@
+import Image from "next/image";
 import React from "react";
-import { Separator } from "../ui/separator";
+import logo from "../../assets/images/Logo.png";
+import { CircleUserRound, ShoppingCart, MenuSquare } from "lucide-react";
 import SearchBox from "../search/SearchBox";
 
 type Props = {};
 
 const MainNav = (props: Props) => {
   return (
-    <>
-      <div className=" flex justify-between mx-5 mt-5 h-16">
-        <div>
-          <SearchBox />
-        </div>
-        <div>Search</div>
-        <div>Search</div>
+    <div className="flex flex-nowrap h-20 px-5 justify-between shadow-md items-center">
+      <Image src={logo.src} alt="Logo" width={40} height={40} className="" />
+
+      <div className="lg:hidden basis-1/3">
+        <MenuSquare />
       </div>
-      <Separator className="my-4" />
-    </>
+      <div className="lg:flex items-center basis-5/12 hidden">
+        <div className="px-5">Categories</div>
+        <div className="px-5">Deals</div>
+        <div className="px-5 basis-48 text-center">New & Featured</div>
+        <div className="px-5 basis-52 text-center">Pickup & Delivery</div>
+      </div>
+
+      <div className="flex-1 mr-4">
+        <SearchBox />
+      </div>
+      <div className="flex basis-24">
+        <CircleUserRound className="mr-2" />
+        Sign in
+      </div>
+
+      <ShoppingCart className="" />
+    </div>
   );
 };
 
