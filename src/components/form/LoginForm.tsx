@@ -13,8 +13,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { useStore } from "zustand";
 import useUserStore from "@/store/store";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
@@ -32,13 +32,16 @@ const LoginForm = (props: Props) => {
     },
   });
 
-  const registerAction = useUserStore((state) => state.registerNewUser);
+  const loginAction = useUserStore((state) => state.login);
+  const user = useUserStore((state) => state.user);
+  const router = useRouter();
+  console.log(user);
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    registerAction({
+    loginAction({
       username: values.username,
       password: values.password,
+      router,
     });
   };
   return (
@@ -81,7 +84,7 @@ const LoginForm = (props: Props) => {
             )}
           />
           <Button type="submit" className="w-full rounded-full">
-            Sign up
+            Sign in
           </Button>
         </form>
       </Form>

@@ -1,5 +1,6 @@
 import { IUser } from "@/types";
 import axios from "axios";
+import { NextResponse } from "next/server";
 import { Interface } from "readline";
 
 const axiosClient = axios.create({
@@ -9,15 +10,18 @@ const axiosClient = axios.create({
   },
 });
 
-interface A {
-  a: number;
-}
-
 export async function RegisterApi(userData: Omit<IUser, "id">) {
   console.log(userData);
   const body = userData;
   const res = await axiosClient.post("users/auth/register", body);
   console.log(res);
 
-  return Response.json(res);
+  return res;
+}
+export async function LoginApi(userData: Pick<IUser, "username" | "password">) {
+  const body = userData;
+  const res = await axiosClient.post("users/auth/login", body);
+  console.log(res);
+
+  return res.data;
 }

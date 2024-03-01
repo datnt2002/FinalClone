@@ -7,7 +7,3 @@ export interface IUser {
   phoneNumber: string;
   password: string;
 }
-
-export interface router {
-  router: any;
-}
