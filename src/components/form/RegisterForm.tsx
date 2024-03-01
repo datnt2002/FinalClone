@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,6 +15,8 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useStore } from "zustand";
 import useUserStore from "@/store/store";
+import { useRouter } from "next/navigation";
+
 type Props = {};
 
 const formSchema = z
@@ -54,12 +56,24 @@ const RegisterForm = (props: Props) => {
   });
 
   const registerAction = useUserStore((state) => state.registerNewUser);
+  const isLoading = useUserStore((state) => state.isLoading);
 
+  useEffect(() => {
+    if (isLoading) {
+    }
+  }, [isLoading]);
+
+  const router = useRouter();
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
     registerAction({
-      email: values.email,
+      username: values.username,
       password: values.password,
+      email: values.email,
+      firstName: values.firstName,
+      lastName: values.lastName,
+      phoneNumber: values.phoneNumber,
+      router,
     });
   };
 
@@ -160,6 +174,7 @@ const RegisterForm = (props: Props) => {
                 <FormLabel className="ml-3">Password</FormLabel>
                 <FormControl>
                   <Input
+                    type="password"
                     placeholder="Enter your password"
                     {...field}
                     className="border border-black rounded-full"
@@ -177,6 +192,7 @@ const RegisterForm = (props: Props) => {
                 <FormLabel className="ml-3">Confirm Password</FormLabel>
                 <FormControl>
                   <Input
+                    type="password"
                     placeholder="Enter your password confirm"
                     {...field}
                     className="border border-black rounded-full"

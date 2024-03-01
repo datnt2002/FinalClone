@@ -1,10 +1,13 @@
 export interface IUser {
-  // id: string;
+  id: string;
   email: string;
-  // username: string;
-  // firstName: string;
-  // lastName: string;
-  // phoneNumber: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
   password: string;
-  // cfPassword: string;
+}
+
+export interface router {
+  router: any;
 }
