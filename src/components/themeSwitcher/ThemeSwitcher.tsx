@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
-import { Button } from "../ui/button";
 import { SunMoon, Moon } from "lucide-react";
 type Props = {};
 
