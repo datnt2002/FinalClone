@@ -9,6 +9,7 @@ const items = [
   { key: 1, path: "/admin/dashboard", title: "DashBoard" },
   { key: 2, path: "/admin/mail", title: "Mail" },
   { key: 3, path: "/admin/tasks", title: "Tasks" },
+  { key: 4, path: "/admin/music", title: "Music" },
 ];
 
 const MenuBarAdmin = (props: Props) => {

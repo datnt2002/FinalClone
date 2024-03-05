@@ -4,6 +4,7 @@ import "./../globals.css";
 import SideNav from "@/components/navigation/SideNav";
 import AdminNav from "@/components/navigation/AdminNav";
 import MenuBarAdmin from "@/components/navigation/MenuBarAdmin";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Admin Next App",
@@ -15,6 +16,10 @@ export default function AdminLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // const token = localStorage?.getItem("token");
+  // if (!token) {
+  //   redirect("/login");
+  // }
   return (
     <>
       <AdminNav />
@@ -22,7 +27,9 @@ export default function AdminLayout({
         <div className="h-20 my-4">
           <MenuBarAdmin />
         </div>
-        <div className="flex border rounded-2xl h-screen p-4">{children}</div>
+        <div className="flex border rounded-2xl h-screen shadow-lg mb-6">
+          {children}
+        </div>
       </div>
     </>
   );
