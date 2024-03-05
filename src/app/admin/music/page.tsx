@@ -1,4 +1,4 @@
-import MenuMusic from "@/components/musicAdmin/Menu";
+import MenuMusic from "@/components/musicAdmin/MenuMusicAdmin";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 

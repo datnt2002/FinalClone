@@ -4,6 +4,7 @@ import logo from "../../assets/images/Logo.png";
 import { CircleUserRound, ShoppingCart, MenuSquare } from "lucide-react";
 import SearchBox from "../search/SearchBox";
 import Link from "next/link";
+import ThemeSwitcher from "../themeSwitcher/ThemeSwitcher";
 
 type Props = {};
 
@@ -33,6 +34,7 @@ const MainNav = (props: Props) => {
       </Link>
 
       <ShoppingCart className="ml-2" />
+      <ThemeSwitcher />
     </div>
   );
 };
