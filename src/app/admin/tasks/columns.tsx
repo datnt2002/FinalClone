@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { MoreHorizontal } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { table } from "console";
 
 const toUpperCaseFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -25,10 +26,24 @@ const toUpperCaseFirstLetter = (str: string) => {
 
 export const columns: ColumnDef<ITask>[] = [
   {
-    accessorKey: "check",
-    header: () => <Checkbox id="checkBox" />,
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        id="checkBox"
+        checked={table.getIsAllPageRowsSelected()}
+        onCheckedChange={(value) => {
+          return table.toggleAllPageRowsSelected(!!value);
+        }}
+      />
+    ),
     cell: ({ row }) => {
-      return <Checkbox id={row.original.id} />;
+      return (
+        <Checkbox
+          id={row.original.id}
+          checked={row.getIsSelected()}
+          onCheckedChange={(value) => row.toggleSelected(!!value)}
+        />
+      );
     },
   },
   {
