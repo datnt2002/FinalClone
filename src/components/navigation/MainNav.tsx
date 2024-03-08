@@ -3,8 +3,9 @@ import React from "react";
 import logo from "../../assets/images/Logo.png";
 import { CircleUserRound, ShoppingCart, MenuSquare } from "lucide-react";
 import SearchBox from "../search/SearchBox";
-import Link from "next/link";
+
 import ThemeSwitcher from "../themeSwitcher/ThemeSwitcher";
+import AvatarDropDown from "../avatarDropdown/AvatarDropDown";
 
 type Props = {};
 
@@ -26,13 +27,8 @@ const MainNav = (props: Props) => {
       <div className="flex-1 mr-4">
         <SearchBox />
       </div>
-      <Link href="/login">
-        <div className="flex basis-24">
-          <CircleUserRound className="mr-1" />
-          Sign in
-        </div>
-      </Link>
 
+      <AvatarDropDown />
       <ShoppingCart className="ml-2" />
       <ThemeSwitcher />
     </div>

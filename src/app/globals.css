@@ -62,3 +62,7 @@
   font-family: 'BOHEMIAN';
   src: url("../assets/fonts/BohemianSoul.otf");
 }
+
+.cursor-pika {
+ cursor: url("../assets/images/cursor.png"), pointer;
+}

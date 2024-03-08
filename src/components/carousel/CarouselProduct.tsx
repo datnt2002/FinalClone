@@ -32,11 +32,11 @@ const CarouselProduct = (props: Props) => {
             return (
               <CarouselItem
                 key={image.key}
-                className="md:basis-1/2 lg:basis-1/3 py-2 justify-self-center self-center"
+                className=" md:basis-1/2 lg:basis-1/3 py-2 justify-self-center self-center"
               >
                 <Image
                   sizes="250px"
-                  className={`rounded-2xl ${rotationClass}`}
+                  className={`rounded-2xl ${rotationClass} hover:scale-110 duration-500 transition-transform`}
                   src={image.src}
                   alt={image.title}
                   width={250}

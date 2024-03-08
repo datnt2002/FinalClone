@@ -67,6 +67,7 @@ const useUserStore = create<UserState>((set) => ({
       router.push("/admin");
       localStorage.setItem("token", "go");
     } else {
+      localStorage.setItem("token", "go");
       router.push("/");
     }
   },
