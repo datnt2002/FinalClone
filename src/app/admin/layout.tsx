@@ -27,7 +27,7 @@ export default function AdminLayout({
         <div className="h-20 my-4">
           <MenuBarAdmin />
         </div>
-        <div className="flex border rounded-2xl h-screen shadow-lg mb-6">
+        <div className="flex border rounded-2xl min-h-screen shadow-lg mb-6">
           {children}
         </div>
       </div>
