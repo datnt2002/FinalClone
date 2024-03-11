@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import * as z from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, useFormState } from "react-hook-form";
+import { useRouter } from "next/navigation";
+
 import {
   Form,
   FormControl,
@@ -14,16 +16,13 @@ import {
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import useUserStore from "@/store/store";
-import { useRouter } from "next/navigation";
-
-type Props = {};
 
 const formSchema = z.object({
-  username: z.string(),
-  password: z.any(),
+  username: z.string().min(1, { message: "Username is required" }),
+  password: z.string().min(1, { message: "Password is required" }),
 });
 
-const LoginForm = (props: Props) => {
+const LoginForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -31,17 +30,29 @@ const LoginForm = (props: Props) => {
       password: "",
     },
   });
+  const {
+    setError,
+    clearErrors,
+    watch,
+    formState: { errors },
+  } = form;
+  const { isValid, isDirty } = useFormState(form);
+  console.log(errors);
+
+  // if (isDirty) {
+  //   clearErrors("root");
+  // }
 
   const loginAction = useUserStore((state) => state.login);
   const user = useUserStore((state) => state.user);
   const router = useRouter();
-  console.log(user);
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     loginAction({
       username: values.username,
       password: values.password,
       router,
+      setError,
     });
   };
   return (
@@ -83,7 +94,12 @@ const LoginForm = (props: Props) => {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full rounded-full">
+          {errors.root?.message && <p>{errors.root.message}</p>}
+          <Button
+            disabled={!isValid}
+            type="submit"
+            className="w-full rounded-full"
+          >
             Sign in
           </Button>
         </form>

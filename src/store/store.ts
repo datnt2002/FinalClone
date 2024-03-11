@@ -1,6 +1,7 @@
 import { LoginApi, RegisterApi } from "@/api/route";
 import { IUser } from "@/types";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { UseFormSetError } from "react-hook-form";
 import { create } from "zustand";
 
 interface UserState {
@@ -12,6 +13,10 @@ interface UserState {
 
 interface router {
   router: AppRouterInstance;
+  setError: UseFormSetError<{
+    username: string;
+    password: string;
+  }>;
 }
 
 const useUserStore = create<UserState>((set) => ({
@@ -56,19 +61,25 @@ const useUserStore = create<UserState>((set) => ({
           },
         },
       };
+    } else {
+      response = {
+        status: 401,
+        data: {
+          message: "User Not Found",
+        },
+      };
     }
     // const response = await LoginApi(dataToPost);
 
     set({ isLoading: true });
     const router = data.router;
-
+    const setError = data.setError;
     if (response?.status === 200) {
       set({ user: response?.data?.user });
       router.push("/admin");
       localStorage.setItem("token", "go");
     } else {
-      localStorage.setItem("token", "go");
-      router.push("/");
+      setError("password", { message: response?.data?.message || "Error" });
     }
   },
 }));
