@@ -12,8 +12,8 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+} from "src/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "src/components/ui/avatar";
 import Link from "next/link";
 import { CircleUserRound } from "lucide-react";
 type Props = {};

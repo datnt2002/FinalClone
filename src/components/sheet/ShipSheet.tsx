@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "src/components/ui/button";
+import { Input } from "src/components/ui/input";
 import {
   Sheet,
   SheetClose,
@@ -12,7 +12,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "src/components/ui/sheet";
 import { MapPin } from "lucide-react";
 import { Separator } from "../ui/separator";
 

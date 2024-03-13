@@ -3,7 +3,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/components/ui/resizable";
+} from "src/components/ui/resizable";
 type Props = {};
 
 const Mail = (props: Props) => {

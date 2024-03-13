@@ -1,7 +1,7 @@
 import React from "react";
 import backgroundImage from "../../../assets/images/bg-authen.jpg";
 import Link from "next/link";
-import LoginForm from "@/components/form/LoginForm";
+import LoginForm from "src/components/form/LoginForm";
 
 type Props = {};
 

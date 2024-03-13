@@ -1,6 +1,6 @@
-import DashBoard from "@/components/dashboardAdmin/DashBoard";
-import DashBoardHeader from "@/components/dashboardAdmin/DashBoardHeader";
-import { Separator } from "@/components/ui/separator";
+import DashBoard from "src/components/dashboardAdmin/DashBoard";
+import DashBoardHeader from "src/components/dashboardAdmin/DashBoardHeader";
+import { Separator } from "src/components/ui/separator";
 import React from "react";
 
 type Props = {};

@@ -1,4 +1,4 @@
-import { gallery } from "@/constants/gallery";
+import { gallery } from "src/constants/gallery";
 import Image from "next/image";
 import React from "react";
 

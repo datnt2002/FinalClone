@@ -7,7 +7,7 @@ import {
   MenubarSeparator,
   MenubarShortcut,
   MenubarTrigger,
-} from "@/components/ui/menubar";
+} from "src/components/ui/menubar";
 type Props = {};
 
 const MenuMusic = (props: Props) => {

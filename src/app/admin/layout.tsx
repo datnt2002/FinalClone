@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 import "./../globals.css";
-import SideNav from "@/components/navigation/SideNav";
-import AdminNav from "@/components/navigation/AdminNav";
-import MenuBarAdmin from "@/components/navigation/MenuBarAdmin";
+import SideNav from "src/components/navigation/SideNav";
+import AdminNav from "src/components/navigation/AdminNav";
+import MenuBarAdmin from "src/components/navigation/MenuBarAdmin";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {

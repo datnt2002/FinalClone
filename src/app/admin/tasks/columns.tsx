@@ -2,7 +2,7 @@
 
 import { ITask, labels, priorities, statuses } from "@/types";
 import { ColumnDef } from "@tanstack/react-table";
-import { Button } from "@/components/ui/button";
+import { Button } from "src/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,9 +15,9 @@ import {
   DropdownMenuSubContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-} from "@/components/ui/dropdown-menu";
+} from "src/components/ui/dropdown-menu";
 import { MoreHorizontal } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Checkbox } from "src/components/ui/checkbox";
 import { table } from "console";
 
 const toUpperCaseFirstLetter = (str: string) => {

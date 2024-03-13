@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "src/components/ui/button";
 import {
   ChevronRight,
   ChevronsRight,
@@ -12,7 +12,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "src/components/ui/select";
 import { Table } from "@tanstack/react-table";
 import { ITask } from "@/types";
 

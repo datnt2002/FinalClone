@@ -1,5 +1,5 @@
-import MenuMusic from "@/components/musicAdmin/MenuMusicAdmin";
-import { Separator } from "@/components/ui/separator";
+import MenuMusic from "src/components/musicAdmin/MenuMusicAdmin";
+import { Separator } from "src/components/ui/separator";
 import React from "react";
 
 type Props = {};

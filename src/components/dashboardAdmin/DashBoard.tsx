@@ -1,7 +1,12 @@
 import React from "react";
 import DatePickerDashboard from "./DatePickerDashboard";
 import { Button } from "../ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "src/components/ui/tabs";
 
 type Props = {};
 

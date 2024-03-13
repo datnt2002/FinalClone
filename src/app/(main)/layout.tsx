@@ -1,5 +1,5 @@
-import MainNav from "@/components/navigation/MainNav";
-import TopNav from "@/components/navigation/TopNav";
+import MainNav from "src/components/navigation/MainNav";
+import TopNav from "src/components/navigation/TopNav";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

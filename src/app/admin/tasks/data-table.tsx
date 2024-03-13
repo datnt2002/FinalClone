@@ -14,7 +14,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "src/components/ui/table";
 import TablePaginationData from "./data-pagination";
 import { ITask } from "@/types";
 

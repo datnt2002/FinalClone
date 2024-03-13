@@ -1,5 +1,5 @@
-import { LoginApi, RegisterApi } from "@/api/route";
-import { IUser } from "@/types";
+import { LoginApi, RegisterApi } from "src/api/route";
+import { IUser } from "src/types";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { UseFormSetError } from "react-hook-form";
 import { create } from "zustand";

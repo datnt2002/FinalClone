@@ -12,7 +12,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "src/components/ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import useUserStore from "@/store/store";

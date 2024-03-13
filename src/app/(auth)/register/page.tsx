@@ -1,7 +1,7 @@
 import React from "react";
 import backgroundImage from "../../../assets/images/bg-authen.jpg";
 import Link from "next/link";
-import RegisterForm from "@/components/form/RegisterForm";
+import RegisterForm from "src/components/form/RegisterForm";
 type Props = {};
 
 const Register = (props: Props) => {

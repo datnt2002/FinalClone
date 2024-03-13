@@ -6,9 +6,9 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "src/components/ui/carousel";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { gallery } from "@/constants/gallery";
+import { gallery } from "src/constants/gallery";
 import Image from "next/image";
 
 type Props = {};
